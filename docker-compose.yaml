@@ -1,0 +1,17 @@
+version: '3'
+services:
+  webserver:
+    container_name: webserver
+    image: nginx:latest
+    volumes:
+      - ./conf.d:/etc/ngix/conf.d
+    ports:
+      - "8888:80"
+    depends_on:
+      - my-app
+
+  my-app:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      
