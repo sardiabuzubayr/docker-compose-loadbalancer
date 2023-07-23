@@ -4,7 +4,7 @@ services:
     container_name: webserver
     image: nginx:latest
     volumes:
-      - ./conf.d:/etc/ngix/conf.d
+      - ./conf.d:/etc/nginx/conf.d
     ports:
       - "8888:80"
     depends_on:
